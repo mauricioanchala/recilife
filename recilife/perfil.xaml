@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="recilife.perfil"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+                <Label Text="ReciLife - Perfil" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
+            </Frame>
+            <Image Source="user.png" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Button x:Name="BtnMostrar" Text="Mostrar Datos" Clicked="BtnMostrar_Clicked"/>
+            <Grid>
+            
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Text="Usuario"  Grid.Column="0" Grid.Row="0" />
+                <Entry x:Name="TxtUsuario" Text="" Grid.Column="1" Grid.Row="0" IsReadOnly="True"  />
+                <Label Text="Contraseña" Grid.Column="0" Grid.Row="1" />
+                <Entry x:Name="TxtClave" IsPassword="True" Text="{Binding password}" Grid.Column="1" Grid.Row="1"/>
+                <Label Text="Nombre" Grid.Column="0" Grid.Row="2" />
+                <Entry x:Name="TxtNombre"  Text="{Binding name}" Grid.Column="1" Grid.Row="2"/>
+                <Label Text="Apellido" Grid.Column="0" Grid.Row="3" />
+                <Entry x:Name="TxtApellido"  Text="{Binding last_name}" Grid.Column="1" Grid.Row="3"/>
+                <Label Text="Correo Electrónico" Grid.Column="0" Grid.Row="4"  />
+                <Entry x:Name="TxtCorreo"  Text="{Binding email}"  Grid.Column="1" Grid.Row="4" Keyboard="Email"/>
+                <Label Text="Teléfono" Grid.Column="0" Grid.Row="5" />
+                <Entry x:Name="TxtTelefono"  Text="{Binding telephone}" Grid.Column="1" Grid.Row="5" Keyboard="Numeric"/>
+                <Label Text="Identificación" Grid.Column="0" Grid.Row="6"/>
+                <Entry x:Name="TxtIdentificacion" Text="{Binding identification_ruc}" Grid.Column="1" Grid.Row="6" Keyboard="Numeric"/>
+                <Button x:Name="BtnActualizar" Text="Actualizar" Clicked="BtnActualizar_Clicked" Grid.Column="0" Grid.Row="7"/>
+                <Button x:Name="BtnCancelar" Text="Cancelar" Clicked="BtnCancelar_Clicked" Grid.Column="1" Grid.Row="7"/>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

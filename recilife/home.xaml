@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="recilife.home"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+                <Label Text="ReciLife" HorizontalTextAlignment="Center" TextColor="White" FontSize="30" />
+            </Frame>
+            <Image Source="user.png" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label x:Name="LblUser" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" />
+            <Grid AnchorX="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BtnPerfil" Text="Perfíl" Clicked="BtnPerfil_Clicked" Grid.Column="0" Grid.Row="0"/>
+                <Button x:Name="BtnSolicitar" Text="Solicitar" Clicked="BtnSolicitar_Clicked" Grid.Column="0" Grid.Row="1"/>
+                <Button x:Name="BtnMisSolicitudes" Text="Mis Solicitudes" Clicked="BtnMisSolicitudes_Clicked" Grid.Column="0" Grid.Row="2"/>
+                <Button x:Name="BtnCerrar" Text="Cerrar Sesion" Clicked="BtnCerrar_Clicked" Grid.Column="0" Grid.Row="3"/>
+
+            </Grid>      
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

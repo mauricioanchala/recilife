@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="recilife.login"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="logo.png" WidthRequest="300" HeightRequest="300" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+            <Entry x:Name="TxtUsuario" Placeholder="Usuario"></Entry>
+            <Entry x:Name="TxtPass" Placeholder="Password" IsPassword="True"></Entry>
+            <Button x:Name="BtnAbrir" Text="Ingresar" Clicked="BtnAbrir_Clicked"  ></Button>
+            <Button x:Name="BtnGoogle" Text="Inicie sesión con Google" Clicked="BtnGoogle_Clicked"></Button>
+            <Button x:Name="BtnRegistrar" Text="Registrarse" Clicked="BtnRegistrar_Clicked" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="recilife.registrarse"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+                <Label Text="ReciLife - Registrarse" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
+            </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Text="Usuario"  Grid.Column="0" Grid.Row="0" />
+                <Entry x:Name="TxtUsuario" Placeholder="Ingrese Usuario" Grid.Column="1" Grid.Row="0"  />
+                <Label Text="Contraseña" Grid.Column="0" Grid.Row="1" />
+                <Entry x:Name="TxtClave" IsPassword="True" Placeholder="Ingrese contraseña" Grid.Column="1" Grid.Row="1"/>
+                <Label Text="Nombre" Grid.Column="0" Grid.Row="2" />
+                <Entry x:Name="TxtNombre"  Placeholder="Ingrese Nombre" Grid.Column="1" Grid.Row="2"/>
+                <Label Text="Apellido" Grid.Column="0" Grid.Row="3" />
+                <Entry x:Name="TxtApellido"  Placeholder="Ingrese Apellido" Grid.Column="1" Grid.Row="3"/>
+                <Label Text="Correo Electrónico" Grid.Column="0" Grid.Row="4"  />
+                <Entry x:Name="TxtCorreo"  Placeholder="mail@mail.com"  Grid.Column="1" Grid.Row="4" Keyboard="Email"/>
+                <Label Text="Teléfono" Grid.Column="0" Grid.Row="5" />
+                <Entry x:Name="TxtTelefono"  Placeholder="0991234567" Grid.Column="1" Grid.Row="5" Keyboard="Numeric"/>
+                <Label Text="Identificación" Grid.Column="0" Grid.Row="6"/>
+                <Entry x:Name="TxtIdentificacion" Placeholder="Cédula o Ruc" Grid.Column="1" Grid.Row="6" Keyboard="Numeric"/>
+
+            </Grid>
+            <Button x:Name="BtnInsertar" Text="Aceptar" Clicked="BtnInsertar_Clicked"></Button>
+            <Button x:Name="BtnRegresar" Text="Regresar" Clicked="BtnRegresar_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
