@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using recilife.Ws;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Collections.Specialized;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +15,7 @@ namespace recilife
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class login : ContentPage
     {
+        const int intUserType = 2;
         public login()
         {
             InitializeComponent();
@@ -19,17 +23,39 @@ namespace recilife
 
         private async void BtnAbrir_Clicked(object sender, EventArgs e)
         {
-            string usuario = TxtUsuario.Text;
+            string usuario = TxtUsuario.Text.Trim();
             string clave = TxtPass.Text;
-            if (usuario == "abc" && clave == "12345")
-            {
-                await Navigation.PushAsync(new home(TxtUsuario.Text));
 
-            }
-            else
+            try
             {
-                //string fecha=DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-                await DisplayAlert("Error","Usuario Incorrecto" , "Aceptar");
+                WebClient cliente = new WebClient();
+                NameValueCollection parametros = new NameValueCollection
+                {
+                    { "email", usuario },
+                    { "password", clave },
+                    { "userType", intUserType.ToString() }
+                };
+
+                byte[] bytes = cliente.UploadValues("https://emma.apis.guabastudio.com/api/login", "POST", parametros);
+                
+                string respuesta = Encoding.Default.GetString(bytes);
+
+                RespuestaGenerica respuestaGenerica = JsonConvert.DeserializeObject<RespuestaGenerica>(respuesta);
+
+
+                if (respuestaGenerica.State == 1)
+                {
+                    await Navigation.PushAsync(new home(usuario));
+
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Usuario Incorrecto", "Aceptar");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Alerta", "Error: " + ex.Message, "OK");
             }
         }
 

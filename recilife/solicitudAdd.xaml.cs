@@ -45,7 +45,7 @@ namespace recilife
                     {
                         //await locator.StartListeningAsync();
 
-                        var position = await locator.GetPositionAsync(10000); 
+                        var position = await locator.GetPositionAsync(new TimeSpan(10000)); 
 
                         TxtLatitud.Text = position.Latitude.ToString();
                         TxtLongitud.Text = position.Longitude.ToString();
