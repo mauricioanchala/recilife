@@ -35,7 +35,7 @@ namespace recilife
 
         private async void BtnCerrar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new login());
+            await Navigation.PushAsync(new Login());
         }
     }
 }

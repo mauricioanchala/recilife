@@ -50,7 +50,7 @@ namespace recilife
                 parametros.Add("field2","");
                 usuario.UploadValues("https://emma.apis.guabastudio.com/api/users", "POST",parametros);
                 await DisplayAlert("Alerta","Usuario Registrado","OK");
-                await Navigation.PushAsync(new login());
+                await Navigation.PushAsync(new Login());
             }
             catch (Exception ex)
             {
@@ -61,7 +61,7 @@ namespace recilife
 
         private async void BtnRegresar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new login());
+            await Navigation.PushAsync(new Login());
         }
     }
 }

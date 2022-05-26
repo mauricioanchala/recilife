@@ -10,7 +10,7 @@ namespace recilife
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new login());
+            MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()

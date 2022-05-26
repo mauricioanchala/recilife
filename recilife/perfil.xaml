@@ -9,7 +9,7 @@
                 <Label Text="ReciLife - Perfil" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
             </Frame>
             <Image Source="user.png" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Button x:Name="BtnMostrar" Text="Mostrar Datos" Clicked="BtnMostrar_Clicked"/>
+            <Label x:Name="lblUserId" IsVisible="false"></Label>
             <Grid>
             
                 <Grid.RowDefinitions>

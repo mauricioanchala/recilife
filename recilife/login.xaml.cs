@@ -13,10 +13,14 @@ using Xamarin.Forms.Xaml;
 namespace recilife
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class login : ContentPage
+    public partial class Login : ContentPage
     {
-        const int intUserType = 2;
-        public login()
+        private readonly WebClient cliente = new WebClient();
+
+        private const string Url = "https://emma.apis.guabastudio.com/api/login";
+
+        private const int UserType = 2;
+        public Login()
         {
             InitializeComponent();
         }
@@ -28,15 +32,14 @@ namespace recilife
 
             try
             {
-                WebClient cliente = new WebClient();
                 NameValueCollection parametros = new NameValueCollection
                 {
                     { "email", usuario },
                     { "password", clave },
-                    { "userType", intUserType.ToString() }
+                    { "userType", UserType.ToString() }
                 };
 
-                byte[] bytes = cliente.UploadValues("https://emma.apis.guabastudio.com/api/login", "POST", parametros);
+                byte[] bytes = cliente.UploadValues(Url, "POST", parametros);
                 
                 string respuesta = Encoding.Default.GetString(bytes);
 
@@ -69,20 +72,6 @@ namespace recilife
         {
 
         }
-
-        /*private async void BtnAbrir_Clicked(object sender, EventArgs e)
-        {
-            string usuario = TxtUsuario.Text;
-            string clave = TxtPass.Text;
-            if (usuario == "estudiante2021" && clave == "uisrael2021")
-            {
-                //await Navigation.PushAsync(new login(TxtUsuario.Text, TxtPass.Text));
-            }
-            else
-            {
-                DisplayAlert("Error", "Usuario Incorrecto", "Aceptar");
-            }
-        }*/
 
     }
 }
