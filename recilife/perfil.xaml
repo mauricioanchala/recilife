@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
-                <Label Text="ReciLife - Perfil" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
+                <Label Text="Perfil" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
             </Frame>
             <Image Source="user.png" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Label x:Name="lblUserId" IsVisible="false"></Label>

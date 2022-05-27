@@ -66,7 +66,10 @@ namespace recilife
             var response = await cliente.PostAsync(Url, data);
 
             string result = response.Content.ReadAsStringAsync().Result;
-            Console.WriteLine(result);
+
+            await DisplayAlert("Solicitud", "Su solictud se registró correctamente!", "OK");
+
+            await Navigation.PushAsync(new home(LblUser.Text));
 
         }
 
