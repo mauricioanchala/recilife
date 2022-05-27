@@ -28,9 +28,9 @@ namespace recilife
             await Navigation.PushAsync(new solicitudAdd(LblUser.Text));
         }
 
-        private void BtnMisSolicitudes_Clicked(object sender, EventArgs e)
+        private async void BtnMisSolicitudes_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new solicitudView(LblUser.Text));
         }
 
         private async void BtnCerrar_Clicked(object sender, EventArgs e)

@@ -3,10 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="recilife.solicitudView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="12">
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="0">
+                <Label Text="ReciLife - Solicitudes" HorizontalTextAlignment="Center" TextColor="White" FontSize="30" />
+            </Frame>
+            <Label x:Name="LblUser" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" />
+            <Button x:Name="BtnConsultar" Text="Consultar" Clicked="BtnConsultar_Clicked"/>
+            <ListView x:Name="MyListView" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label x:Name="LblFecha" Text="{Binding created}" TextColor="White"/>
+                                <Label x:Name="LblStateuser" Text="{Binding name}" TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
